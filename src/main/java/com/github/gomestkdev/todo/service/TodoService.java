@@ -18,10 +18,10 @@ public class TodoService {
 
     public List<Todo> getAllTodos() {
         // Lógica para obter todos os todos
-        Sort sort = Sort.by("prioridade").descending()
-            .and(
-                Sort.by("nome").ascending()
-            );
+        Sort sort = Sort.by(
+            Sort.Order.desc("prioridade"),
+            Sort.Order.asc("nome")
+        );
 
         return todoRepository.findAll(sort);
     }

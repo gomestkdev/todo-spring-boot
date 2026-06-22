@@ -1,6 +1,6 @@
 package com.github.gomestkdev.todo.entity;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -20,15 +20,18 @@ public class Todo {
     private boolean concluido;
     private int prioridade;
     @Column(name = "data_criacao")
-    private LocalDate dataCriacao;
+    private LocalDateTime dataCriacao;
 
-    public Todo(Long id, String nome, String descricao, boolean concluido, int prioridade, LocalDate dataCriacao) {
-        this.id = id;
-        this.nome = nome;
+    public Todo(String unexinstingId, String descricao, boolean concluido, int prioridade, invalid dataCriacao) {
+        this.nome = unexinstingId;
         this.descricao = descricao;
         this.concluido = concluido;
         this.prioridade = prioridade;
         this.dataCriacao = dataCriacao;
+    }
+
+    public Todo(long unexinstingId, String descricao2, String concluido2, boolean prioridade2, int dataCriacao2) {
+        //TODO Auto-generated constructor stub
     }
 
     public Long getId() {
@@ -71,11 +74,11 @@ public class Todo {
         this.prioridade = prioridade;
     }
     
-    public LocalDate getDataCriacao() {
+    public LocalDateTime getDataCriacao() {
         return dataCriacao;
     }
     
-    public void setDataCriacao(LocalDate dataCriacao) {
+    public void setDataCriacao(LocalDateTime dataCriacao) {
         this.dataCriacao = dataCriacao;
     }
 
